@@ -16,6 +16,8 @@
     "express": "^4.21.2",
     "newsapi": "^2.4.1",
     "nodemon": "^3.1.9",
-    "openai": "^4.87.4"
+    "openai": "^4.87.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   }
 }
