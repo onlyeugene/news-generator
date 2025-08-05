@@ -1,17 +1,20 @@
-const NewsAPI = require('newsapi');
+const axios = require('axios');
 const config = require('../config/config');
-
-const newsapi = new NewsAPI(config.newsApiKey);
 
 async function fetchNews() {
   try {
-    const response = await newsapi.v2.topHeadlines({
-      language: 'en',
-      pageSize: 20,
+    const response = await axios.get('https://newsdata.io/api/1/latest', {
+      params: {
+        apikey: process.env.NEWSDATA_API_KEY, // Use a clear variable name
+        language: 'en', // Match your previous language setting
+        country: 'us',
+        // size: 20, // Match your previous pageSize
+      },
     });
-    return response.articles;
+    return response.data.results; // Access the correct field for articles
   } catch (error) {
-    throw new Error('Failed to fetch news');
+    console.error('NewsData.io Error:', error.response ? error.response.data : error.message);
+    throw new Error(`Failed to fetch news: ${error.message}`);
   }
 }
 
