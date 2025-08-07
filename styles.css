@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Optional: Set a font */
+  /* background-color: green; */
+}
+.article {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 300px; /* Set a fixed width for articles */
+}
+#news-feed textarea, #summarize textarea {
+    display: flex;
+  width: 300px; /* Set a fixed width for text areas */
+  height: 100px; /* Set a fixed height for text areas */
+  margin-bottom: 10px; /* Space between elements */
+}
+button {
+  margin-bottom: 20px; /* Space below buttons */
+  padding: 10px 15px; /* Button padding */
+  cursor: pointer; /* Change cursor on hover */
+}
