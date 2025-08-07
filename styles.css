@@ -6,7 +6,7 @@ body {
   height: 100vh; /* Full viewport height */
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Optional: Set a font */
-  background-color: green;
+  /* background-color: green; */
 }
 .article {
   border: 1px solid #ccc;
