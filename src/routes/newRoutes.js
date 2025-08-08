@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getNewsFeed, getNewsSummary } = require('../controllers/newsController');
+const { getNewsFeed, getNewsSummary, register } = require('../controllers/newsController');
 
 
 /**
@@ -62,5 +62,42 @@ router.get('/feed', getNewsFeed);         // Get news feed
  */
 router.post('/summarize', getNewsSummary); // Summarize an article
 
+/**
+ * @swagger
+ * /api/news/register:
+ *   post:
+ *     summary: Register email
+ *     description: Register the email
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               articleText:
+ *                 type: string
+ *             required:
+ *               - email
+ *     responses:
+ *       200:
+ *         description: Successfully summarized article
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 summary:
+ *                   type: string
+ *       400:
+ *         description: Bad request (missing email)
+ *       500:
+ *         description: Server error
+ */
+router.post('/register', register ); // Register email
+
+// router.post('/register', register);
+
 module.exports = router;
+
 
