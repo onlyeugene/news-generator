@@ -11,8 +11,8 @@ const app = express();
 
 // Determine server URL based on environment
 const serverUrl = process.env.NODE_ENV === 'production'
-  ? process.env.SERVER_URL || 'https://your-backend-server.com'
-  : 'http://localhost:3000';
+  ? process.env.SERVER_URL || 'https://https://news-generator-zkw4.onrender.com'
+  : 'http://localhost:8050';
 
 // Swagger configuration
 const swaggerOptions = {
