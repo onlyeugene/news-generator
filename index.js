@@ -5,6 +5,7 @@ require('dotenv').config();
 const app = express();
 const swaggerDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
+const cors = require('cors')
 
 const swaggerOptions = {
   definition: {
@@ -26,6 +27,7 @@ const specs = swaggerDoc(swaggerOptions);
 // Middleware
 app.use(express.json());
 app.use(express.static('public')); // Serve static files
+app.use(cors())
 
 // Routes
 app.use('/api/news', newsRoutes);
