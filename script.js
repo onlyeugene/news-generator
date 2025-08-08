@@ -47,7 +47,7 @@ async function getSummary({ title, description, keywords, articleIndex }) {
     summaryOutput.classList.remove('hidden');
     // Assuming process.env.WEB_URL is not directly accessible in JavaScript
     // Using a fallback URL for demonstration purposes
-    const url = 'https://news-generator-zkw4.onrender.com/api/news/summary';
+    const url = 'https://news-generator-zkw4.onrender.com/api/news/summarize';
 
     const response = await fetch(url, {
       method: 'POST',
